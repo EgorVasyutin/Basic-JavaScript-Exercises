@@ -30,7 +30,7 @@ function max(array) {
 }
 
 
-const array = [1,2,3]
+const array = [-4, -2, -3]
 const maxValue = max(array)
 console.log('array = ', array) // [1,2,3]
 console.log('max = ', maxValue) // 1
