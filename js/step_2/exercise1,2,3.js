@@ -19,4 +19,4 @@ const car = {
 // console.log(car)
 // console.log(car.model, car.price, car.color, car.accessories)
 // console.dir(car)
-console.log(Object.)
+console.log(Object)
