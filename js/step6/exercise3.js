@@ -4,18 +4,22 @@
 // если нет - то берется квадрат числа
 // squareRootOrPower([4,3,9,7,2,1]) -> [2,9,3,49,4,1]
 
-const numbers = [4,3,9,7,2,1]
-let numbers2 = []
 
-function squareRootOrPower(){
-for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i])
-        numbers2.push(Math.sqrt(numbers[i]))
-    else {
-        numbers2.push(numbers[i] * numbers[i])
-    }
-    }
 
+
+function squareRootOrPower(num) {
+    let numbers = []
+    num = num.toString().split('')
+    console.log(num)
+    for (let i = 0; i < num.length; i++) {
+        if (Math.sqrt(num[i]) === Math.round(Math.sqrt(num[i]))) {
+            numbers.push(num[i])
+        }else {
+            numbers.push(Math.pow(num[i], 2))
+        }
+    }
+    return numbers.join()
 }
-squareRootOrPower()
-console.log(numbers2)
+
+let n = [4, 3, 9, 7, 2, 1]
+console.log(squareRootOrPower([439721]))
