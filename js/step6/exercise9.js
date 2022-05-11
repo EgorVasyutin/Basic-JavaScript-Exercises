@@ -3,43 +3,20 @@
 // Тип сортировки может быть или asc (по возрастанию), или desc (по убыванию)
 // По умолчанию сортировка по возрастанию
 
-function mergeArrays(array1, array2) {
-    const d = [1,2,3,4,5,6,7,8,9,0,]
-    let arrays = []
-    for (let i = 0; i < d.length; i++) {
-        for (let k = 0; k < array2.length; k++) {
-        for (let j = 0; j < array1.length; j++) {
-                if (array1[j] === d[i]) {
-                    arrays.push(array1[j])
-                }
-                if (array2[k] === d[i]) {
-                    arrays.push(array2[k])
-                }
-
-            }
-        }
-    }
-    arrays.sort()
-    for (let i = 0; i < arrays.length; i++) {
-        arrays = arrays[i]
-        if (arrays.includes('desc')){
-            arrays.push(arrays.split('').reverse().join())
-        }
-    }
+function mergeArrays(array1, array2, sortType) {
+    let resultArray = []
 
 
+    resultArray = Array.from(new Set([...array1, ...array2]))
 
-    return arrays
+    resultArray.sort((a, b) => a - b)
+
+    return resultArray
 }
-
-
-
-
-// console.log(mergeArrays([1, 2, 3, 4, 5], [6, 7, 8, 9, 10,]))
 // // -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // //
 // //
-// console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]))
+console.log(mergeArrays([1, 3, 5, 7, 9],[10, 8, 6, 4, 2]))
 // // -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // //
 // console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2], 'asc'))
